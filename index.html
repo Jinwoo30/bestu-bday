@@ -81,6 +81,8 @@
     #birthdayPage {
       display: none;
       animation: fadeIn 1s ease forwards;
+      max-height: 90vh;
+      overflow-y: auto;
     }
 
     @keyframes fadeIn {
@@ -112,14 +114,28 @@
       font-size: 1.3rem;
       color: #fffdd0;
       text-shadow: 1px 1px 3px #6b4c28;
+      line-height: 1.6;
     }
 
     .faizian-img {
       margin-top: 20px;
       width: 100%;
-      max-width: 300px;
+      max-width: 280px;
       border-radius: 15px;
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .music-player {
+      margin-top: 25px;
+      padding: 15px;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 12px;
+    }
+
+    .music-player iframe {
+      width: 100%;
+      border-radius: 10px;
+      border: none;
     }
   </style>
 </head>
@@ -149,13 +165,13 @@
       Keep shining like your favorite star, Faizian!<br/>
     </p>
 
-    <img class="faizian-img" src="https://example.com/faizian-photo.jpg" alt="Faizian" />
+    <img class="faizian-img" src="https://i.pinimg.com/564x/8f/e8/b9/8fe8b9c1e8c6b8f5c4b8a8c7d6e5f4g3.jpg" alt="Kiran" />
 
-    <!-- Optional: Add Faizian song embed or link here -->
-    <audio controls autoplay loop>
-      <source src="https://example.com/faizian-song.mp3" type="audio/mpeg">
-      Your browser does not support the audio element.
-    </audio>
+    <!-- Music Player -->
+    <div class="music-player">
+      <p style="margin-bottom: 10px; font-size: 0.95rem;">🎵 Your Birthday Song 🎵</p>
+      <iframe width="100%" height="200" src="https://www.youtube.com/embed/WuMWwPHTSoY" title="Birthday Song" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
   </div>
 
 <script>
