@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Happy Birthday Kiran!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset */
+    * {
+      box-sizing: border-box;
+      margin: 0; padding: 0;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    body, html {
+      height: 100%;
+      background: linear-gradient(135deg, #3a1c71, #d76d77, #ffaf7b);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 400px;
+      background: rgba(0,0,0,0.3);
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+      text-align: center;
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: #ffd700;
+      text-shadow: 1px 1px 6px #ff4500;
+    }
+
+    label {
+      font-size: 1.2rem;
+      display: block;
+      margin: 15px 0 8px;
+    }
+
+    input[type="date"] {
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      font-size: 1rem;
+      width: 100%;
+      max-width: 200px;
+      margin-bottom: 15px;
+    }
+
+    button {
+      background-color: #ff4500;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 25px;
+      color: white;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #ff6347;
+    }
+
+    .error {
+      color: #ff9999;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    /* Birthday Page Styles */
+    #birthdayPage {
+      display: none;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    .balloon {
+      position: relative;
+      width: 60px;
+      height: 80px;
+      background: radial-gradient(circle at 30% 30%, #ff6f91, #d81e5b);
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      display: inline-block;
+      margin: 0 5px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .balloon:nth-child(2) {background: radial-gradient(circle at 30% 30%, #6fb1ff, #3070d8); animation-delay: 1s;}
+    .balloon:nth-child(3) {background: radial-gradient(circle at 30% 30%, #ffd97d, #ffa500); animation-delay: 2s;}
+
+    @keyframes float {
+      0%, 100% {transform: translateY(0);}
+      50% {transform: translateY(-20px);}
+    }
+
+    .message {
+      margin-top: 20px;
+      font-size: 1.3rem;
+      color: #fffdd0;
+      text-shadow: 1px 1px 3px #6b4c28;
+    }
+
+    .faizian-img {
+      margin-top: 20px;
+      width: 100%;
+      max-width: 300px;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container" id="lockPage">
+    <h1>Unlock Birthday Surprise</h1>
+    <label for="birthdate">Enter your birthdate to unlock</label>
+    <input type="date" id="birthdate" max="2024-12-31" />
+    <button onclick="checkBirthdate()">Unlock</button>
+    <div class="error" id="errorMsg"></div>
+  </div>
+
+  <div class="container" id="birthdayPage">
+    <h1>Happy Birthday Kiran! 🎉</h1>
+
+    <div>
+      <span class="balloon"></span>
+      <span class="balloon"></span>
+      <span class="balloon"></span>
+    </div>
+
+    <p class="message">
+      To my babygirl and my sweetheart,<br/>
+      Wishing you an amazing birthday filled with love and joy.<br/>
+      Keep shining like your favorite star, Faizian!<br/>
+    </p>
+
+    <img class="faizian-img" src="https://example.com/faizian-photo.jpg" alt="Faizian" />
+
+    <!-- Optional: Add Faizian song embed or link here -->
+    <audio controls autoplay loop>
+      <source src="https://example.com/faizian-song.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+<script>
+  function checkBirthdate() {
+    const input = document.getElementById('birthdate').value;
+    const errorMsg = document.getElementById('errorMsg');
+    // Correct birthdate for Kiran e.g 2005-05-18 (change as needed)
+    const correctDate = '2005-05-18'; 
+    
+    if (input === correctDate) {
+      document.getElementById('lockPage').style.display = 'none';
+      document.getElementById('birthdayPage').style.display = 'block';
+    } else {
+      errorMsg.textContent = "Oops! That's not the correct date. Try again.";
+    }
+  }
+</script>
+
+</body>
+</html>
